@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <ul class="placeholder">
+    </ul>
+</body>
+    <script>
+    const headers = new Headers();
+    headers.append("Content-Type", "application/json");
+
+    // Correct handling of the first fetch
+    fetch("https://jsonplaceholder.typicode.com/todos", {
+        method: "GET",
+        headers: headers
+    })
+    .then((response) => response.json())
+    .then((data) => console.log(data)) 
+    .catch((error) => console.error('Error:', error));  
+
+    element = document.getElementsByClassName("placeholder")
+    fetch("text.txt")
+    .then((response) => response.text())
+    .then((text) => console.log(text))  
+    .catch((error) => console.error('Error:', error));  
+</script>
+</html>
